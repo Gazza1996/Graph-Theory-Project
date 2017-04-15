@@ -1,0 +1,15 @@
+// cypher command to load in rooms.csv
+LOAD CSV WITH HEADERS FROM "file:///C:/rooms.csv" AS csvLine
+CREATE (r:RoomNodes { RoomNumber : csvLine.room, RoomCapacity: csvLine.capacity})
+
+// cypher command to load in courses.csv
+LOAD CSV WITH HEADERS FROM "file:///C:/courses.csv" AS csvLine
+CREATE (r:Courses { CourseName : csvLine.Course, Year: csvLine.Year, Semester: csvLine.Semester, Module: csvLine.Module})
+
+// cypher command to load in studentGroups.csv
+LOAD CSV WITH HEADERS FROM "file:///C:/studentGroups.csv" AS csvLine
+CREATE (r:Groups { Group : csvLine.Group, Size: csvLine.GroupSize, Year: csvLine.Year,Semester: csvLine.Semester, Course: csvLine.course})
+
+// cypher command to load in Students.csv
+LOAD CSV WITH HEADERS FROM "file:///C:/Students.csv" AS csvLine
+CREATE (r:Students { ID : csvLine.StudentID, Year: csvLine.Year, Group: csvLine.Group, Course: csvLine.Course})
