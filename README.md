@@ -35,6 +35,14 @@ Version 1.0 was released in February 2010.
 
 **Cypher**  
 
+Cypher is a declarative, SQL-inspired language for describing patterns in graphs visually using an ascii-art syntax.  
+
+It allows us to state what we want to select, insert, update or delete from our graph data without requiring us to describe exactly how to do it.  
+
+> example of using cypher in a relationship
+
+<img src="https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/cypher_pattern_simple.png">  
+
 ## Database  
 
 ## Queries  
