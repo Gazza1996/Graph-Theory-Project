@@ -73,6 +73,21 @@ For getting the information about lecturers i just got all the names for each mo
 E.G,    CREATE (MartinHynes:Lecturers{Name:"Martin Hynes"})
 ```  
 
+**Rooms**  
+For getting the rooms I just took the rooms that are most used by the course and added them to the database.  
+```
+E.G,    CREATE (G0436CR5:Rooms{Name:"G0436 CR5"})
+```
+
+**Times**  
+The times simply ranged from 9am until 6pm which I placed in hourly slots.  
+```
+Example: 
+      CREATE (Slot1:Times{Name:"9am-10Am"})
+      CREATE (Slot2:Times{Name:"10am-11Am"})
+      CREATE (Slot3:Times{Name:"11am-12pm"})
+      CREATE (Slot4:Times{Name:"12pm-1pm"})
+```
 
 ## Relationship
 
