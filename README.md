@@ -1,5 +1,7 @@
 # Neo4j Timetabling Project
 
+<img src="https://neo4j.com/wp-content/themes/neo4jweb/assets/images/neo4j-logo-2015.png">
+
 ###### Author - Gary Mannion - G00319609
 ###### Module - Graph Theory
 ###### Lecturer - Ian McLoughlin
