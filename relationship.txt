@@ -1,0 +1,140 @@
+###### relationship method #########
+
+------------Software Testing------------
+MATCH (a:Lecturers),(b:Module), (c:Rooms)
+WHERE a.Name = 'Martin Hynes' AND b.Name = 'Software Testing' AND c.Name = 'G0997'
+CREATE (a)-[r:TEACHES]->(b)
+CREATE (b)-[r1:IN]->(c)
+RETURN a,b,c,r
+
+
+MATCH (a:Rooms),(b:Times),(c:Days)
+WHERE a.Name = 'G0997' AND b.Name = '2pm-3pm' AND c.Name = 'Wednesday'
+CREATE (a)-[r:AT]->(b)
+CREATE (b)-[r1:ON]->(c)
+RETURN a,b,c,r
+
+MATCH (a:Module),(b:Rooms),(c:Times),(d:Times)
+WHERE a.Name = 'Software Testing' AND b.Name = 'G0481 CR4' AND c.Name = '4pm-5pm' AND d.Name = '5pm-6pm'
+CREATE (a)-[r:LAB]->(b)
+CREATE (b)-[r1:AT]->(c)
+CREATE (c)-[r1:UNTIL]->(d)
+RETURN a,b,c,r,d
+
+MATCH (a:Times),(b:Days),(c:Groups)
+WHERE a.Name = '4pm-5pm' AND b.Name = 'Monday' AND c.Name = 'GroupA' 
+CREATE (a)-[r:ON]->(b)
+CREATE (b)-[r1:FOR]->(c)
+RETURN a,b,c,r 
+----------------------FYP-----------------------
+MATCH (a:Lecturers),(b:Module),(c:Rooms)
+WHERE a.Name = 'Martin Kenirons' AND b.Name = 'Final Year Project' AND c.Name = 'G0484 CR1'
+CREATE (a)-[r:TEACHES]->(b)
+CREATE (b)-[r:IN]->(c)
+RETURN a,b,c,r 
+
+MATCH (a:Rooms),(b:Times),(c:Days)
+WHERE a.Name = 'G0484 CR1' AND b.Name = '2pm-3pm' AND c.Name = 'Tuesday'
+CREATE (a)-[r:AT]->(b)
+CREATE (a)-[r1:ON]->(c)
+RETURN a,b,c,r 
+-----------------------Change name property---------------
+MATCH (n { Name: "Deidre O'Donovan"}) 
+SET n.Name = 'Deirdre ODonovan' 
+RETURN n
+
+----------------Database Management Systems--------------
+
+MATCH (a:Lecturers),(b:Module),(c:Rooms),(d:Times)
+WHERE a.Name = 'Deirdre ODonovan' AND b.Name = 'Database Management Systems' AND c.Name = 'G0994' AND d.Name = '10am-11Am'
+CREATE (a)-[r:TEACHES]->(b)
+CREATE (b)-[r1:Lecture]->(c)
+CREATE (c)-[r2:AT]->(d)
+RETURN r,a,b,c,d
+
+MATCH (a:Times),(b:Days)
+WHERE a.Name = '10am-11Am' AND b.Name = 'Monday' 
+CREATE (a)-[r:ON]->(b)
+RETURN a,b,r 
+
+MATCH (a:Module),(b:Rooms),(c:Times),(d:Times)
+WHERE a.Name = 'Database Management Systems' AND b.Name = 'G0481 CR4' AND c.Name = '9am-10Am' AND d.Name = '10am-11Am'
+CREATE (a)-[r:LAB]->(b)
+CREATE (b)-[r1:AT]->(c)
+CREATE (c)-[r2:UNTIL]->(d)
+RETURN r,a,b,c,d
+
+MATCH (a:Times),(b:Days), (c:Groups)
+WHERE a.Name = '10am-11Am' AND b.Name = 'Monday' AND c.Name = 'GroupA' 
+CREATE (a)-[r:ON]->(b)
+CREATE (b)-[r1:FOR]->(c)
+RETURN a,b,c,r 
+
+-------------Mobile APP Development-------------------
+MATCH (a:Lecturers),(b:Module),(c:Rooms),(d:Times)
+WHERE a.Name = 'Damien costello' AND b.Name = 'Mobile APP Development' AND c.Name = 'G Prefab18' AND d.Name = '12pm-1pm'
+CREATE (a)-[r:TEACHES]->(b)
+CREATE (b)-[r1:Lecture]->(c)
+CREATE (c)-[r2:AT]->(d)
+RETURN r,a,b,c,d
+
+MATCH (a:Times),(b:Times), (c:Days)
+WHERE a.Name = '12pm-1pm' AND b.Name = '1pm-2pm' AND c.Name = 'Monday' 
+CREATE (a)-[r:UNTIL]->(b)
+CREATE (b)-[r1:ON]->(c)
+RETURN a,b,c,r 
+
+MATCH (a:Module),(b:Rooms),(c:Times),(d:Times)
+WHERE a.Name = 'Mobile APP Development' AND b.Name = 'G0470 Computing Practical Lab' AND c.Name = '11am-12pm' AND d.Name = '12pm-1pm' 
+CREATE (a)-[r:LAB]->(b)
+CREATE (b)-[r1:AT]->(c)
+CREATE (c)-[r2:UNTIL]->(d)
+RETURN a,b,c,r,d 
+
+MATCH (a:Times),(b:Days)
+WHERE a.Name = '11am-12pm' AND b.Name = 'Tuesday' 
+CREATE (a)-[r:ON]->(b)
+RETURN a,b,r 
+
+MATCH (a:Days),(b:Groups)
+WHERE a.Name = 'Tuesday' AND b.Name = 'GroupA' 
+CREATE (a)-[r:FOR]->(b)
+RETURN a,b,r 
+
+---------------------Graph Theory-----------------------
+MATCH (a:Lecturers),(b:Module),(c:Rooms),(d:Times)
+WHERE a.Name = 'Ian McLoughlin' AND b.Name = 'Graph Theory' AND c.Name = 'G0938' AND d.Name = '10am-11Am'
+CREATE (a)-[r:TEACHES]->(b)
+CREATE (b)-[r1:LECTURE]->(c)
+CREATE (c)-[r2:AT]->(d)
+RETURN r,a,b,c,d
+
+MATCH (a:Module),(b:Rooms),(c:Times),(d:Days)
+WHERE a.Name = 'Graph Theory' AND b.Name = 'G Prefab06' AND c.Name = '2pm-3pm' AND d.Name = 'Monday'
+CREATE (a)-[r:LAB]->(b)
+CREATE (b)-[r1:AT]->(c)
+CREATE (c)-[r2:ON]->(d)
+RETURN r,a,b,c,d
+
+MATCH (a:Times),(b:Groups)
+WHERE a.Name = '2pm-3pm' AND b.Name = 'GroupA' 
+CREATE (a)-[r:FOR]->(b)
+RETURN r,a,b
+
+----------------SSR------------------
+All ready done!!!!!!
+
+--------------- Course to module-----------------
+MATCH (a:Course),(b:Module),(c:Module),(d:Module)
+WHERE a.Name = 'Software Development L7 Yr3 Sem2' AND b.Name = 'Graph Theory' AND c.Name = 'Mobile APP Development' AND d.Name = 'Server Side Rad'
+CREATE (a)-[r:MODULE]->(b)
+CREATE (b)-[r1:MOBILE]->(c)
+CREATE (c)-[r2:SSR]->(d)
+RETURN r,a,b,c,d
+
+MATCH (a:Course),(b:Module),(c:Module),(d:Module)
+WHERE a.Name = 'Software Development L7 Yr3 Sem2' AND b.Name = 'Database Management Systems' AND c.Name = 'Software Testing' AND d.Name = 'Final Year Project'
+CREATE (a)-[r:DBMS]->(b)
+CREATE (b)-[r1:ST]->(c)
+CREATE (c)-[r2:FYP]->(d)
+RETURN r,a,b,c,d

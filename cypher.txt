@@ -1,0 +1,75 @@
+############ modules ##########
+CREATE (ServerSideRad:Module{Name:"Server Side Rad"})
+CREATE (MobileAPPDevelopment:Module{Name:"Mobile APP Development"})
+CREATE (GraphTheory:Module{Name:"Graph Theory"})
+CREATE (DatabaseManagementSystems:Module{Name:"Database Management Systems"})
+CREATE (SoftwareTesting:Module{Name:"Software Testing"})
+CREATE (FinalYearProject:Module{Name:"Final Year Project"})
+
+############ Rooms #############
+CREATE (G0436CR5:Rooms{Name:"G0436 CR5"})
+CREATE (G0480CR7:Rooms{Name:"G0480 CR7"})
+CREATE (G0481CR4:Rooms{Name:"G0481 CR4"})
+CREATE (G0482CR3:Rooms{Name:"G0482 CR3"})
+CREATE (G0483CR2:Rooms{Name:"G0483 CR2"})
+CREATE (G0484CR1:Rooms{Name:"G0484 CR1"})
+CREATE (G0903:Rooms{Name:"G0903"})
+CREATE (G0938:Rooms{Name:"G0938"})
+CREATE (G0939:Rooms{Name:"G0939"})
+CREATE (G0940:Rooms{Name:"G0940"})
+CREATE (G0941:Rooms{Name:"G0941"})
+CREATE (G0470ComputingPracticalLab:Rooms{Name:"G0470 Computing Practical Lab"})
+CREATE (G0994:Rooms{Name:"G0994"})
+CREATE (G0995:Rooms{Name:"G0995"})
+CREATE (G0996:Rooms{Name:"G0996"})
+CREATE (G0997:Rooms{Name:"G0997"})
+CREATE (GPrefab01:Rooms{Name:"G Prefab01"})
+CREATE (GPrefab02:Rooms{Name:"G Prefab02"})
+CREATE (GPrefab03:Rooms{Name:"G Prefab03"})
+CREATE (GPrefab04:Rooms{Name:"G Prefab04"})
+CREATE (GPrefab05:Rooms{Name:"G Prefab05"})
+CREATE (GPrefab06:Rooms{Name:"G Prefab06"})
+CREATE (GPrefab07:Rooms{Name:"G Prefab07"})
+CREATE (GPrefab08:Rooms{Name:"G Prefab08"})
+CREATE (GPrefab09:Rooms{Name:"G Prefab09"})
+CREATE (GPrefab10:Rooms{Name:"G Prefab10"})
+CREATE (GPrefab18:Rooms{Name:"G Prefab18"})
+
+######### Days ############
+CREATE (Monday:Days{Name:"Monday"})
+CREATE (Tuesday:Days{Name:"Tuesday"})
+CREATE (Wednesday:Days{Name:"Wednesday"})
+CREATE (Thursday:Days{Name:"Thursday"})
+CREATE (Friday:Days{Name:"Friday"})
+
+########### Course #############
+CREATE (SoftwareDevelopmentL7Yr3:Course{Name:"Software Development L7 Yr3 Sem2"})
+
+########### times ########
+CREATE (Slot1:Times{Name:"9am-10Am"})
+CREATE (Slot2:Times{Name:"10am-11Am"})
+CREATE (Slot3:Times{Name:"11am-12pm"})
+CREATE (Slot4:Times{Name:"12pm-1pm"})
+CREATE (Slot5:Times{Name:"1pm-2pm"})
+CREATE (Slot6:Times{Name:"2pm-3pm"})
+CREATE (Slot7:Times{Name:"3pm-4pm"})
+CREATE (Slot8:Times{Name:"4pm-5pm"})
+CREATE (Slot9:Times{Name:"5pm-6pm"})
+
+######## Lecturers #############
+CREATE (MartinHynes:Lecturers{Name:"Martin Hynes"})
+CREATE (IanMcLoughlin:Lecturers{Name:"Ian McLoughlin"})
+CREATE (DamienCostello:Lecturers{Name:"Damien costello"})
+CREATE (DeidreODonovan:Lecturers{Name:"Deidre O'Donovan"})
+CREATE (GerardHarrison:Lecturers{Name:"Gerard Harrison"})
+CREATE (MartinKenirons:Lecturers{Name:"Martin Kenirons"})
+
+########## groups ############
+CREATE (GroupA:Groups{Name:"GroupA"})
+CREATE (GroupB:Groups{Name:"GroupB"})
+CREATE (GroupC:Groups{Name:"GroupC"})
+ 
+CREATE (class:Class{Name:"Class"})
+
+
+ 
