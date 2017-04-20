@@ -120,6 +120,17 @@ RETURN r,a,b,c,d
 This command matches the lecturers,Modules,Rooms and Times and finds the properties named(Deirdre ODonovan)(Database Management Systems) etc. to make a relationship and then calling the relationship(TEACHES,LECTURE,AT) and will return the relationship and properties made.
 ```
 
+I then did a second command to add extra relationships on this already created relationship.  
+```
+MATCH (a:Times),(b:Days)
+WHERE a.Name = '10am-11Am' AND b.Name = 'Monday' 
+CREATE (a)-[r:ON]->(b)
+RETURN a,b,r 
+
+This simply does the same as the previous command just takes the Times already in a relationship and adds the days to it(Monday) and creates the relationshipo(ON).
+```
+
+
 
 ## Conclusion  
 
