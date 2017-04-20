@@ -44,8 +44,22 @@ It allows us to state what we want to select, insert, update or delete from our 
 <img src="https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/cypher_pattern_simple.png">  
 
 ## Database  
+Before i created my database I had to make a design decision on what part of the timetable to use.  
+I decided to use the semester 2 of my course and use my exact timetable as the basis of the database.  
+I then picked different nodes to incorporate the database. The nodes are listed as:  
 
-## Queries  
+```
+1. Course
+2. Lecturer
+3. Rooms
+4. Times
+5. Days
+6. Groups
+```  
+I added all 3 groups as nodes but only needed one(Group A) as that is my group.  
+
+
+## Relationship
 
 ## Conclusion  
 
