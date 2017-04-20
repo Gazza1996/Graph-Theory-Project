@@ -130,12 +130,32 @@ RETURN a,b,r
 This simply does the same as the previous command just takes the Times already in a relationship and adds the days to it(Monday) and creates the relationshipo(ON).
 ```
 
+Finally, I decided that there should be a seperate relationship for the LAB time for all Modules that require lab times which i done inthe following way.  
+```
+MATCH (a:Module),(b:Rooms),(c:Times),(d:Times)
+WHERE a.Name = 'Database Management Systems' AND b.Name = 'G0481 CR4' AND c.Name = '9am-10Am' AND d.Name = '10am-11Am'
+CREATE (a)-[r:LAB]->(b)
+CREATE (b)-[r1:AT]->(c)
+CREATE (c)-[r2:UNTIL]->(d)
+RETURN r,a,b,c,d
 
+This command performs in the exact same way as the first example.
+```
 
 ## Conclusion  
-
+To summarize, graph databases like Neo4J and its supporting query language Cypher are becoming an increasingly popular tool today, especially in the last 10 years since social media has taken off. Facebook for example uses a graph database, this allows users to quickly search for their friends, friends of their friends and so on. I feel personally that in the future graph databases will only become increasingly popular and will be implemented in more and more environments. The use of the graph makes it very easy to the human eye to understand what nodes are within the database and also for relationships to know what is connected to each other and for what reason.  
 
 
 ## References  
-- (https://neo4j.com/docs/developer-manual/current/cypher/clauses/create/)  
-- (http://whatis.techtarget.com/definition/graph-database)
+- https://neo4j.com/docs/developer-manual/current/cypher/clauses/create/  
+- http://whatis.techtarget.com/definition/graph-database
+- https://www.tutorialspoint.com/graph_theory/  
+- http://neo4j.com/developer/cypher
+- http://neo4j.com/docs/stable/query-match.html
+- http://timetable.gmit.ie/sws1617/(S(gudsqdfus0ilov45bqk3d2vi))/default.aspx
+- https://neo4j.com/developer/cypher-query-language
+- https://neo4j.com/docs/developer-manual/current/cypher/clauses/remove/
+- https://neo4j.com/docs/developer-manual/current/cypher/clauses/match/
+- https://neo4j.com/docs/developer-manual/current/cypher/clauses/where/
+- https://neo4j.com/docs/developer-manual/current/cypher/clauses/delete/
+- https://neo4j.com/docs/developer-manual/current/cypher/#cypher-intro
