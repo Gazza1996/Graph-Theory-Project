@@ -58,6 +58,21 @@ I then picked different nodes to incorporate the database. The nodes are listed 
 ```  
 I added all 3 groups as nodes but only needed one(Group A) as that is my group.  
 
+After selecting each node for the database i had to go and retrieve the data which consisted of me checking my timetable for the above properties which i placed into a textfile in the method needed to create them in the database which can be found in the repository.  
+
+**Course**  
+Here is how i created the node for my course name and details along with it.  
+```
+CREATE (SoftwareDevelopmentL7Yr3:Course{Name:"Software Development L7 Yr3 Sem2"})
+```  
+This is also an example of a cypher command.  
+
+**Lecturer**  
+For getting the information about lecturers i just got all the names for each module and created them like the example below
+```
+E.G,    CREATE (MartinHynes:Lecturers{Name:"Martin Hynes"})
+```  
+
 
 ## Relationship
 
