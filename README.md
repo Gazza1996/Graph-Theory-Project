@@ -89,7 +89,37 @@ Example:
       CREATE (Slot4:Times{Name:"12pm-1pm"})
 ```
 
-## Relationship
+**Days**  
+The days are similar to Times as it ranges from Monday to Friday.  
+```
+Example:
+            CREATE (Monday:Days{Name:"Monday"})
+            CREATE (Tuesday:Days{Name:"Tuesday"})
+```
+
+**Groups**  
+Added in the 3 groups in the course (A,B,C). However i only needed group A as that is my group for my timetable.  
+```
+E.G,        CREATE (GroupA:Groups{Name:"GroupA"})
+```
+
+## Relationship  
+For creating a relationship between different nodes and properties proved to be very difficult and required a lot of research on the neo4j website and other websites which i have referenced.  
+
+The way I designed my database through relationships was to join lecturers->Modules->Rooms->Times  
+After this i would then join that Times->Days->Groups, or some cases if a class was 2 hours long i would make a relationship to a second time slot (UNTIL). Times->Times->Days->Groups.  
+
+```
+MATCH (a:Lecturers),(b:Module),(c:Rooms),(d:Times)
+WHERE a.Name = 'Deirdre ODonovan' AND b.Name = 'Database Management Systems' AND c.Name = 'G0994' AND d.Name = '10am-11Am'
+CREATE (a)-[r:TEACHES]->(b)
+CREATE (b)-[r1:Lecture]->(c)
+CREATE (c)-[r2:AT]->(d)
+RETURN r,a,b,c,d
+
+This command matches the lecturers,Modules,Rooms and Times and finds the properties named(Deirdre ODonovan)(Database Management Systems) etc. to make a relationship and then calling the relationship(TEACHES,LECTURE,AT) and will return the relationship and properties made.
+```
+
 
 ## Conclusion  
 
